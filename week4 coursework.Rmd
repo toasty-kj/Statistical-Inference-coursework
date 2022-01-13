@@ -35,7 +35,7 @@ check 95% confidence interval with t.test() and make sure there is no statistica
 ```{r, cache=TRUE}
 t.test(rxp)
 ```
-
+As we can see the result, the theoretical mean is in the 95% confidence interval.
 
 # 2.Show how variable the sample is(via variance) and compare it to the theoretical variance of the distrubution.
 the variance of the distribution is μ^2/n, thus the sample variance and theoretical variance are
@@ -45,10 +45,11 @@ theova <- ((1/lamda)^2)/40
 print(c("theoretical variance", ((1/lamda)^2)/40))
 ```
 
+
 # 3.Show that the distribution is approximately normal
 
 ```{r, cache=TRUE}
-hist(rxp, freq = FALSE)
+hist(rxp, freq = FALSE,)
 curve(dnorm(x,mean = 1/lamda, sd = (lamda*sqrt(40))^-1),add = TRUE,from = 2, to = 8, col = "red", lwd = 3)
 lines(density(rxp), col = "blue", lwd = 3)
 ```
